@@ -1,0 +1,28 @@
+<html><head><title>Browser Detection Testing Grid</title>
+<script>
+url = '://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js';
+
+if (window.location.protocol == 'https:') {
+	url = 'https' + url;
+} else {
+	url = 'http' + url;
+}
+
+document.write('<script src="' + url + '"></scr' + 'ipt>');
+
+</script>
+<script>
+$(function () {
+	$('input[name="eval"]').click(function () {
+		var code = $('textarea').val();
+		eval(code);
+		return false;
+	});
+});
+</script>
+</head><body>
+<textarea rows=20 style="width: 100%" id="evalMe">// JS Code goes here
+</textarea>
+<input type="button" name="eval" value="Run eval()">
+
+</body></html>
